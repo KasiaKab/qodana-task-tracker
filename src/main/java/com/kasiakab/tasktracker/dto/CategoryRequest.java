@@ -2,7 +2,11 @@ package com.kasiakab.tasktracker.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
+import lombok.Getter;
+import lombok.Setter;
 
+@Setter
+@Getter
 public class CategoryRequest {
 
     @NotBlank(message = "Category name is required")
@@ -15,12 +19,4 @@ public class CategoryRequest {
     public CategoryRequest() {
     }
 
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
-
-    public String getColor() { return color; }
-    public void setColor(String color) { this.color = color; }
-
-    public String getDescription() { return description; }
-    public void setDescription(String description) { this.description = description; }
 }

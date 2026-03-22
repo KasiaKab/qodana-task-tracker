@@ -42,10 +42,7 @@ public class TaskUtils {
         if (title == null || title.trim().isEmpty()) {
             return false;
         }
-        if (title.length() > 100) {
-            return false;
-        }
-        return true;
+        return title.length() <= 100;
     }
 
 
@@ -53,10 +50,7 @@ public class TaskUtils {
         if (description == null) {
             return true;
         }
-        if (description.length() > 500) {
-            return false;
-        }
-        return true;
+        return description.length() <= 500;
     }
 
     public static String truncate(String text, int maxLength) {

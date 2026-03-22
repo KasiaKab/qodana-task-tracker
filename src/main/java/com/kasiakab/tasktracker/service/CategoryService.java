@@ -78,7 +78,7 @@ public class CategoryService {
         try {
             categoryRepository.deleteById(id);
             log.info("Category deleted: {}", id);
-        } catch (Exception e) {
+        } catch (Exception ignored) {
         }
     }
 
