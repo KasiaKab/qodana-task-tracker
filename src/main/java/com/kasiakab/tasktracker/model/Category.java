@@ -1,11 +1,15 @@
 package com.kasiakab.tasktracker.model;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
 import java.util.Objects;
 
+@Setter
+@Getter
 @Document(collection = "categories")
 public class Category {
 
@@ -31,29 +35,8 @@ public class Category {
         if (name == null || name.trim().isEmpty()) {
             return false;
         }
-        if (name.length() > 50) {
-            return false;
-        }
-        return true;
+        return name.length() <= 50;
     }
-
-    public String getId() { return id; }
-    public void setId(String id) { this.id = id; }
-
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
-
-    public String getColor() { return color; }
-    public void setColor(String color) { this.color = color; }
-
-    public String getDescription() { return description; }
-    public void setDescription(String description) { this.description = description; }
-
-    public LocalDateTime getCreatedAt() { return createdAt; }
-    public void setCreatedAt(LocalDateTime createdAt) { this.createdAt = createdAt; }
-
-    public int getTaskCount() { return taskCount; }
-    public void setTaskCount(int taskCount) { this.taskCount = taskCount; }
 
     @Override
     public boolean equals(Object o) {
